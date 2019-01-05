@@ -8,7 +8,34 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-
+<header>
+  <h1>Friends App</h1>
+</header>
+<main>
+  <div class="controls">
+    <div class="agesort">
+      <span>By Age:</span>
+      <button class="sortbtn" id="agesortAZ">A-Z</button>
+      <button class="sortbtn" id="agesortZA">Z-A</button>
+    </div>
+    <div class="namesort">
+      <span>By Name:</span>
+      <button class="sortbtn" id="namesortAZ">A-Z</button>
+      <button class="sortbtn" id="namesortZA">Z-A</button>
+    </div>
+    <div class="filter">
+      <input type="number"><button class="filterbtn" id="agefilter">Filter by age</button>
+      <input type="text"><button class="filterbtn" id="namefilter">Filter by name</button>
+      <input type="radio" name="sex" id="male"><label for="male">Male</label>
+      <input type="radio" name="sex" id="female"><label for="female">Female</label>
+      <input type="radio" name="sex" id="all"><label for="all">All</label>
+      <button class="filterbtn" id="sexfilter">Filter by sex</button>
+    </div>
+  </div>
+  <div class="users">
+    
+  </div>
+</main>
 <script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>
