@@ -61,6 +61,7 @@ class  FriendsBlockElement {
       let friendCard = new FriendCard(friend);
       frag.appendChild(friendCard.getFriendCardElement());
     });
+    this.blockElement.innerHTML = ``;
     this.blockElement.appendChild(frag);
   }
 }
@@ -71,12 +72,14 @@ class FriendCard {
   }
   getFriendCardElement(){
     let cardElement = document.createElement(`div`);
+    cardElement.classList.add(`card`);
     let nameElement = document.createElement(`div`);
+    nameElement.classList.add(`nametext`);
     nameElement.textContent = `${this.friendObj.name.first} ${this.friendObj.name.last}`;
     cardElement.appendChild(nameElement);
     let photoElement = document.createElement(`div`);
     let img = document.createElement(`img`);
-    img.setAttribute(`src`, this.friendObj.picture.medium);
+    img.setAttribute(`src`, this.friendObj.picture.large);
     photoElement.appendChild(img);
     cardElement.appendChild(photoElement);
     let ageEelement = document.createElement(`div`);
@@ -84,6 +87,7 @@ class FriendCard {
     cardElement.appendChild(ageEelement);
     let phoneElement = document.createElement(`div`);
     phoneElement.textContent = this.friendObj.phone;
+    phoneElement.classList.add(`phonetext`);
     cardElement.appendChild(phoneElement);
     return cardElement;
   }
@@ -102,6 +106,7 @@ let ageFilterInpt = document.getElementById(`ageinput`);
 let nameFilterInpt = document.getElementById(`nameinput`);
 let ageFilterBtn = document.getElementById(`agefilter`);
 let nameFilterBtn = document.getElementById(`namefilter`);
+let resetBtn = document.getElementById(`resetbtn`);
 
 ageSortAzBtn.addEventListener('click', function(evt){
   friendsBlock.fillBlock(controller.getSortFriends(`age`, true));
@@ -126,3 +131,7 @@ ageFilterBtn.addEventListener('click', function(evt){
 nameFilterBtn.addEventListener('click', function(evt){
   friendsBlock.fillBlock(controller.getFiltredFriends(`name`, nameFilterInpt.value));
 });
+
+resetBtn.addEventListener(`click`, function(evt){
+  friendsBlock.fillBlock(controller.friendsDataArr);
+})

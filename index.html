@@ -9,23 +9,26 @@
 </head>
 <body>
 <header>
-  <h1>Friends App</h1>
+  <h1 class="apptitle">Friends App</h1>
 </header>
 <main class="main-container">
   <div class="controls">
     <div class="agesort">
       <span>By Age:</span>
-      <button class="sortbtn" id="agesortAZ">A-Z</button>
-      <button class="sortbtn" id="agesortZA">Z-A</button>
+      <button class="sortbtn btn" id="agesortAZ">A-Z</button>
+      <button class="sortbtn btn" id="agesortZA">Z-A</button>
     </div>
     <div class="namesort">
       <span>By Name:</span>
-      <button class="sortbtn" id="namesortAZ">A-Z</button>
-      <button class="sortbtn" id="namesortZA">Z-A</button>
+      <button class="sortbtn btn" id="namesortAZ">A-Z</button>
+      <button class="sortbtn btn" id="namesortZA">Z-A</button>
     </div>
     <div class="filter">
-      <input type="number" id="ageinput"><button class="filterbtn" id="agefilter">Filter by age</button>
-      <input type="text" id="nameinput"><button class="filterbtn" id="namefilter">Filter by name</button>
+      <input class="finput" type="number" id="ageinput"><button class="filterbtn btn" id="agefilter">Filter by age</button>
+      <input class="finput" stype="text" id="nameinput"><button class="filterbtn btn" id="namefilter">Filter by name</button>
+    </div>
+    <div class="reset">
+      <button class="btn" id="resetbtn">Reset</button>
     </div>
   </div>
   <div class="users">
