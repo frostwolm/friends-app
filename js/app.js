@@ -93,3 +93,36 @@ let controller = new FriendsController();
 let friendsBlock = new FriendsBlockElement(document.getElementsByClassName(`users`)[0]);
 controller.getData();
 friendsBlock.fillBlock(controller.friendsDataArr);
+
+let ageSortAzBtn = document.getElementById(`agesortAZ`);
+let ageSortZaBtn = document.getElementById(`agesortZA`);
+let nameSortAzBtn = document.getElementById(`namesortAZ`);
+let nameSortZaBtn = document.getElementById(`namesortZA`);
+let ageFilterInpt = document.getElementById(`ageinput`);
+let nameFilterInpt = document.getElementById(`nameinput`);
+let ageFilterBtn = document.getElementById(`agefilter`);
+let nameFilterBtn = document.getElementById(`namefilter`);
+
+ageSortAzBtn.addEventListener('click', function(evt){
+  friendsBlock.fillBlock(controller.getSortFriends(`age`, true));
+});
+
+ageSortZaBtn.addEventListener('click', function(evt){
+  friendsBlock.fillBlock(controller.getSortFriends(`age`, false));
+});
+
+nameSortAzBtn.addEventListener('click', function(evt){
+  friendsBlock.fillBlock(controller.getSortFriends(`name`, true));
+});
+
+nameSortZaBtn.addEventListener('click', function(evt){
+  friendsBlock.fillBlock(controller.getSortFriends(`name`, false));
+});
+
+ageFilterBtn.addEventListener('click', function(evt){
+  friendsBlock.fillBlock(controller.getFiltredFriends(`age`, ageFilterInpt.value));
+});
+
+nameFilterBtn.addEventListener('click', function(evt){
+  friendsBlock.fillBlock(controller.getFiltredFriends(`name`, nameFilterInpt.value));
+});
