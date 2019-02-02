@@ -68,11 +68,11 @@ html{
 }
 
 .sort__button--increase{
-  background-image: url('../../img/sort-down.svg');
+  background-image: url('../img/sort-down.svg');
 
 }
 .sort__button--reduce{
-  background-image: url('../../img/sort-up.svg');
+  background-image: url('../img/sort-up.svg');
 }
 
 .controls__button--stretch{
